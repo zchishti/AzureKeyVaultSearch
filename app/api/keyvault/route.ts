@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import msalInstance from "../../auth/msalconfig-backend";
-import { ClientSecretCredential } from "@azure/identity";
 import { SecretClient } from "@azure/keyvault-secrets";
 import { TokenCredential } from "@azure/identity";
 
