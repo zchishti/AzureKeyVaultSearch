@@ -46,9 +46,15 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-        
+    
+    - name: List project files (debugging)
+      run: ls -la
+
     - name: Create artifact archive
-      run: zip -r artifact.zip build/ 
+      run: zip -r artifact.zip . -x "node_modules/*" "*.git*"
+      
+    #- name: Create artifact archive
+    #  run: zip -r artifact.zip build/ 
 
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
